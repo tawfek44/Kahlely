@@ -1,5 +1,6 @@
 class Routes {
   static const splashScreenRoute = "SPLASH_SCREEN_ROUTE";
+  static const homeScreenRoute = "HOME_SCREEN_ROUTE";
 
 
 

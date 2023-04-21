@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:khalely/screens/home_screen/home_screen.dart';
 
 import '../screens/splash_screen/splash_screen.dart';
 import 'app_routes_names.dart';
@@ -12,6 +13,7 @@ class NamedNavigatorImpl implements NamedNavigator {
     switch (settings.name) {
 
       case Routes.splashScreenRoute :return MaterialPageRoute(builder: (_) => const SplashScreen());
+      case Routes.homeScreenRoute :return MaterialPageRoute(builder: (_) => const HomeScreen());
 
     }
 

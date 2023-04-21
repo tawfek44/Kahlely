@@ -99,8 +99,8 @@ class QuranKareemTranslationApiHandler {
 
   final ApiService _api;
 
-  Future<Response> getQuranKareemTranslation(int ayaID) async {
-    return _api.getQuranKareemTranslation(ayaID);
+  Future<Response> getQuranKareemTranslation(int surahID) async {
+    return _api.getQuranKareemTranslation(surahID);
   }
 }
 

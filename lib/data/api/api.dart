@@ -18,7 +18,7 @@ abstract class ApiService extends ChopperService {
 
   @Get(path: '$quranKareemTranslationApi/{id}')
   Future<Response> getQuranKareemTranslation(
-      @Path('id') int ayaID
+      @Path('id') int surahID
       );
 
   @Get(path: hadithTellersApi)

@@ -44,9 +44,9 @@ class _$ApiService extends ApiService {
   }
 
   @override
-  Future<Response<dynamic>> getQuranKareemTranslation(int ayaID) {
+  Future<Response<dynamic>> getQuranKareemTranslation(int surahID) {
     final Uri $url = Uri.parse(
-        'https://quranenc.com/api/v1/translation/sura/arabic_moyassar/${ayaID}');
+        'https://quranenc.com/api/v1/translation/sura/arabic_moyassar/${surahID}');
     final Request $request = Request(
       'GET',
       $url,

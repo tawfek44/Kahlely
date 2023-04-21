@@ -13,7 +13,7 @@ Future main() async {
   launchApp();
 }
 
-void launchApp() => runApp(const MyApp());
+void launchApp() => runApp(di.provideApp(const MyApp()));
 
 class MyApp extends StatefulWidget {
   const MyApp({key}) : super(key: key);
@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: themeData,
-          initialRoute: Routes.splashScreenRoute,
+          initialRoute: Routes.homeScreenRoute,
           onGenerateRoute: NamedNavigatorImpl.onGenerateRoute,
           navigatorKey: NamedNavigatorImpl.navigatorState,
         );
