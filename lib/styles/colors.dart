@@ -8,9 +8,9 @@ class AppColors {
 
   AppColors._();
 
-  static final primaryColor = HexColor('#5BB381');  //Color.fromARGB(176, 164, 195, 12);
+  static final primaryColor = HexColor('#8a59d1');  //Color.fromARGB(176, 164, 195, 12);
+  static final secondlyColor = HexColor('#632bbb');  //Color.fromARGB(176, 164, 195, 12);
   static const darkGrey = Color(0xff7C7C7C);
+  static final lightGrey = HexColor('#eedfeb');
   static const errorColor = Colors.red;
-  static const lightGrey= Color(0xFFF5F6F6);
-  static const borderColor = Color(0xffE2E2E2);
 }

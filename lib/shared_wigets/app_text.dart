@@ -41,6 +41,7 @@ class AppText extends StatelessWidget {
       ),
       textDirection: TextDirection.rtl ,
       maxLines: maxLines ?? 2,
+      locale: const Locale("ar", "AR"),
     );
   }
 }

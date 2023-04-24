@@ -53,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future onTimerFinished() async{
     const delay = Duration(seconds: 5);
     await Future.delayed(delay).then((value) {
-      NamedNavigatorImpl().push(Routes.homeScreenRoute);
+      NamedNavigatorImpl().push(Routes.homeScreenRoute,clean: true);
     });
   }
   @override

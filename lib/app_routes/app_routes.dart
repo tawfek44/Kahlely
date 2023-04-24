@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:khalely/screens/home_screen/home_screen.dart';
+import 'package:khalely/screens/prayer_timings_screen/prayer_timings_screen.dart';
 
 import '../screens/splash_screen/splash_screen.dart';
 import 'app_routes_names.dart';
@@ -12,8 +13,19 @@ class NamedNavigatorImpl implements NamedNavigator {
   static Route<dynamic> onGenerateRoute(RouteSettings settings,) {
     switch (settings.name) {
 
-      case Routes.splashScreenRoute :return MaterialPageRoute(builder: (_) => const SplashScreen());
-      case Routes.homeScreenRoute :return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case Routes.splashScreenRoute :return MaterialPageRoute(builder: (_) => const Directionality(
+        textDirection: TextDirection.rtl,
+          child: SplashScreen(),
+      ));
+      case Routes.homeScreenRoute :return MaterialPageRoute(builder: (_) => const Directionality(
+        textDirection: TextDirection.rtl,
+          child: HomeScreen()),
+      );
+
+      case Routes.prayerTimingsScreenRoute :return MaterialPageRoute(builder: (_) => const Directionality(
+          textDirection: TextDirection.rtl,
+          child: PrayerTimingsScreen()),
+      );
 
     }
 

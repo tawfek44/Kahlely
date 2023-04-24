@@ -44,6 +44,14 @@ dependencies:
   get: ^4.6.5
   lottie: ^2.3.2
   percent_indicator: ^4.2.3
+  hijri: ^3.0.0
+  geolocator: ^9.0.2
+  geocoding: ^2.1.0
+  geocoder: ^0.2.1
+  permission_handler: ^10.2.0
+  google_maps_flutter: ^2.1.8
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:

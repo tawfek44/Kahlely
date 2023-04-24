@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:khalely/styles/theme.dart';
 import 'app_routes/app_routes.dart';
@@ -37,6 +38,15 @@ class _MyAppState extends State<MyApp> {
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
         return MaterialApp(
+          localizationsDelegates: const [
+            GlobalMaterialLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          supportedLocales: const [
+            Locale('en', ''),
+            Locale('ar', ''),
+          ],
           debugShowCheckedModeBanner: false,
           theme: themeData,
           initialRoute: Routes.homeScreenRoute,
