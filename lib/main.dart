@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_qiblah/flutter_qiblah.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:khalely/styles/theme.dart';
 import 'app_routes/app_routes.dart';
@@ -18,7 +18,6 @@ void launchApp() => runApp(di.provideApp(const MyApp()));
 
 class MyApp extends StatefulWidget {
   const MyApp({key}) : super(key: key);
-
 
   @override
   State<MyApp> createState() => _MyAppState();

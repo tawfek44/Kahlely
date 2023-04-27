@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        appBar: getAppBar(title: 'خليلى',isLeading: false),
+        appBar: getAppBar(title: 'خليلى', isLeading: false),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.w),
           child: ListView(
@@ -115,10 +115,16 @@ class _HomeScreenState extends State<HomeScreen> {
           return InkWell(
             onTap: () {
               switch (index) {
+                case 1:
+                  {
+                    NamedNavigatorImpl().push(Routes.qiblahScreenRoute);
+                  }
+                  break;
                 case 4:
                   {
                     NamedNavigatorImpl().push(Routes.prayerTimingsScreenRoute);
                   }
+                  break;
               }
             },
             child: Container(
@@ -136,7 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   AppText(
                     text: appDepartmentsNames[index],
-                    fontSize: 15.sp,
+                    fontSize: 13.sp,
                     textAlign: TextAlign.center,
                   )
                 ],

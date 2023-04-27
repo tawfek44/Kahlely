@@ -2,12 +2,7 @@ class Routes {
   static const splashScreenRoute = "SPLASH_SCREEN_ROUTE";
   static const homeScreenRoute = "HOME_SCREEN_ROUTE";
   static const prayerTimingsScreenRoute = "PRAYER_TIMINGS_SCREEN_ROUTE";
-
-
-
-
-
-
+  static const qiblahScreenRoute = "QIBLAH_SCREEN_ROUTE";
 }
 
 abstract class NamedNavigator {

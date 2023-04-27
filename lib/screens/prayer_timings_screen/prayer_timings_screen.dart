@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,7 +14,8 @@ import '../../shared_wigets/app_circular_indicator.dart';
 import '../../shared_wigets/app_snack_bar.dart';
 
 class PrayerTimingsScreen extends StatefulWidget {
-  const PrayerTimingsScreen({Key? key}) : super(key: key);
+  PrayerTimingsScreen({Key? key}) : super(key: key);
+  String? country, city;
 
   @override
   State<PrayerTimingsScreen> createState() => _PrayerTimingsScreenState();
@@ -63,7 +62,7 @@ class _PrayerTimingsScreenState extends State<PrayerTimingsScreen> {
               ),
             );
           } else if (state is LoadingPrayerTimings) {
-            return const AppCircularProgressIndicator();
+            return const Center(child: AppCircularProgressIndicator());
           } else {
             return getErrorWidget();
           }
@@ -78,8 +77,8 @@ class _PrayerTimingsScreenState extends State<PrayerTimingsScreen> {
     getAddress();
     context.read<PrayerTimingsCubit>().getPrayerTimings(
           date: DateTime.now().toString(),
-          city: 'cairo',
-          country: 'egypt',
+          city: widget.city ?? 'cairo',
+          country: widget.country ?? 'EG',
         );
   }
 
@@ -113,6 +112,7 @@ class _PrayerTimingsScreenState extends State<PrayerTimingsScreen> {
   Future<Position> getCurrentLocation(context) async {
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
+      await Geolocator.openLocationSettings();
       return Future.error('خدمات الموقع غير مفعًلة');
     }
     LocationPermission permission = await Geolocator.checkPermission();
@@ -142,12 +142,13 @@ class _PrayerTimingsScreenState extends State<PrayerTimingsScreen> {
   }
 
   Future<void> getAddressFromLatLng(Position position) async {
-    List<Placemark> placemarks =
-        await placemarkFromCoordinates(position.latitude, position.longitude);
-    Placemark place = placemarks[0];
-    var Address =
-        '${place.street}, ${place.subLocality}, ${place.locality}, ${place.postalCode}, ${place.country}';
-    print(Address);
+    placemarkFromCoordinates(position.latitude, position.longitude)
+        .then((value) {
+      setState(() {
+        widget.country = value[0].country;
+        widget.city = value[0].administrativeArea;
+      });
+    });
   }
 
   Future<bool> checkLocationServiceEnabled() {
