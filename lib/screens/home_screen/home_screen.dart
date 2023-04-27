@@ -120,6 +120,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     NamedNavigatorImpl().push(Routes.qiblahScreenRoute);
                   }
                   break;
+                case 2:
+                  {
+                    NamedNavigatorImpl()
+                        .push(Routes.AzkarMorinigAndNightScreenRoute);
+                  }
+                  break;
                 case 4:
                   {
                     NamedNavigatorImpl().push(Routes.prayerTimingsScreenRoute);
