@@ -10,8 +10,7 @@ part 'azkar_cubit.freezed.dart';
 
 @injectable
 class AzkarCubit extends Cubit<AzkarState> {
-  AzkarCubit(this._azkarRepository)
-      : super(const AzkarState.initial());
+  AzkarCubit(this._azkarRepository) : super(const AzkarState.initial());
 
   final AzkarRepository _azkarRepository;
 
@@ -25,5 +24,15 @@ class AzkarCubit extends Cubit<AzkarState> {
     }
   }
 
-
+  Future<void> getSleepAzkar({required int id}) async {
+    try {
+      emit(const AzkarState.loadingSleepAzkar());
+      final azkar = await _azkarRepository.getSleepAzkar(id: id);
+      print(azkar);
+      emit(AzkarState.loadedSleepAzkar(azkar));
+    } catch (e) {
+      print('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee$e');
+      emit(AzkarState.errorSleepAzkar(e));
+    }
+  }
 }

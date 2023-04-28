@@ -5,6 +5,8 @@ class Routes {
   static const qiblahScreenRoute = "QIBLAH_SCREEN_ROUTE";
   static const AzkarMorinigAndNightScreenRoute =
       "AZKAR_MORNING_NIGHT_SCREEN_ROUTE";
+  static const AzkarSleepScreenRoute = "AZKAR_SLEEP_SCREEN_ROUTE";
+  static const QuranSurahNamesScreenRoute = "QURAN_SURAH_NAMES  _SCREEN_ROUTE";
 }
 
 abstract class NamedNavigator {

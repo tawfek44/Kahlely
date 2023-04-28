@@ -17,6 +17,18 @@ Map<String, dynamic> _$AzkarModelToJson(AzkarModel instance) =>
       'أذكار الصباح والمساء': instance.morningAndNightAzkar,
     };
 
+AzkarSleepModel _$AzkarSleepModelFromJson(Map<String, dynamic> json) =>
+    AzkarSleepModel(
+      sleepAzkar: (json['أذكار النوم'] as List<dynamic>)
+          .map((e) => MorningAndNightAzkar.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$AzkarSleepModelToJson(AzkarSleepModel instance) =>
+    <String, dynamic>{
+      'أذكار النوم': instance.sleepAzkar,
+    };
+
 MorningAndNightAzkar _$MorningAndNightAzkarFromJson(
         Map<String, dynamic> json) =>
     MorningAndNightAzkar(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:khalely/screens/azkar/azkar_morning_nights/azkar_morning_nights.dart';
+import 'package:khalely/screens/azkar/sleep_azkar/sleep_azkar_screen.dart';
 import 'package:khalely/screens/home_screen/home_screen.dart';
 import 'package:khalely/screens/prayer_timings_screen/prayer_timings_screen.dart';
+import 'package:khalely/screens/surah_names_screen/surah_names_screen.dart';
 
 import '../screens/qibla_screen/qibla_screen.dart';
 import '../screens/splash_screen/splash_screen.dart';
@@ -43,6 +45,18 @@ class NamedNavigatorImpl implements NamedNavigator {
         return MaterialPageRoute(
           builder: (_) => const Directionality(
               textDirection: TextDirection.rtl, child: AzkarMorningAndNight()),
+        );
+
+      case Routes.AzkarSleepScreenRoute:
+        return MaterialPageRoute(
+          builder: (_) => const Directionality(
+              textDirection: TextDirection.rtl, child: SleepAzkarScreen()),
+        );
+
+      case Routes.QuranSurahNamesScreenRoute:
+        return MaterialPageRoute(
+          builder: (_) => const Directionality(
+              textDirection: TextDirection.rtl, child: SurahNamesScreen()),
         );
     }
 

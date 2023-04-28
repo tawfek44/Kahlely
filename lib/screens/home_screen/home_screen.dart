@@ -115,6 +115,12 @@ class _HomeScreenState extends State<HomeScreen> {
           return InkWell(
             onTap: () {
               switch (index) {
+                case 0:
+                  {
+                    NamedNavigatorImpl()
+                        .push(Routes.QuranSurahNamesScreenRoute);
+                  }
+                  break;
                 case 1:
                   {
                     NamedNavigatorImpl().push(Routes.qiblahScreenRoute);
@@ -129,6 +135,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 case 4:
                   {
                     NamedNavigatorImpl().push(Routes.prayerTimingsScreenRoute);
+                  }
+                  break;
+                case 5:
+                  {
+                    NamedNavigatorImpl().push(Routes.AzkarSleepScreenRoute);
                   }
                   break;
               }
@@ -148,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   AppText(
                     text: appDepartmentsNames[index],
-                    fontSize: 13.sp,
+                    fontSize: 12.sp,
                     textAlign: TextAlign.center,
                   )
                 ],

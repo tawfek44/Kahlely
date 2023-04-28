@@ -8,15 +8,15 @@ import '../models/hadith_tellers_model/hadith_tellers_model.dart';
 @injectable
 class AzkarRepository {
   AzkarRepository._(
-      this._api,
-      );
+    this._api,
+  );
 
   final AzkarApiHandler _api;
 
   @factoryMethod
   factory AzkarRepository.create(
-      AzkarApiHandler api,
-      ) {
+    AzkarApiHandler api,
+  ) {
     return AzkarRepository._(api);
   }
 
@@ -30,4 +30,13 @@ class AzkarRepository {
     return AzkarModel.fromJson(body);
   }
 
+  Future<AzkarSleepModel> getSleepAzkar({required int id}) async {
+    final response = await _api.getAzkar(id);
+    if (!response.isSuccessful) {
+      final error = response.error as Object;
+      return Future.error(error);
+    }
+    final body = response.body;
+    return AzkarSleepModel.fromJson(body);
+  }
 }

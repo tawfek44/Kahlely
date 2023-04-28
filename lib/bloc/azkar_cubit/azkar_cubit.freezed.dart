@@ -22,6 +22,10 @@ mixin _$AzkarState {
     required TResult Function() loading,
     required TResult Function(AzkarModel azkarModel) loaded,
     required TResult Function(Object e) error,
+    required TResult Function() initialSleepAzkar,
+    required TResult Function() loadingSleepAzkar,
+    required TResult Function(AzkarSleepModel azkarModel) loadedSleepAzkar,
+    required TResult Function(Object e) errorSleepAzkar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +34,10 @@ mixin _$AzkarState {
     TResult? Function()? loading,
     TResult? Function(AzkarModel azkarModel)? loaded,
     TResult? Function(Object e)? error,
+    TResult? Function()? initialSleepAzkar,
+    TResult? Function()? loadingSleepAzkar,
+    TResult? Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult? Function(Object e)? errorSleepAzkar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +46,10 @@ mixin _$AzkarState {
     TResult Function()? loading,
     TResult Function(AzkarModel azkarModel)? loaded,
     TResult Function(Object e)? error,
+    TResult Function()? initialSleepAzkar,
+    TResult Function()? loadingSleepAzkar,
+    TResult Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult Function(Object e)? errorSleepAzkar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +59,10 @@ mixin _$AzkarState {
     required TResult Function(LoadingAzkar value) loading,
     required TResult Function(LoadedAzkar value) loaded,
     required TResult Function(ErrorAzkar value) error,
+    required TResult Function(_InitialSleepAzkar value) initialSleepAzkar,
+    required TResult Function(LoadingSleepAzkar value) loadingSleepAzkar,
+    required TResult Function(LoadedSleepAzkar value) loadedSleepAzkar,
+    required TResult Function(ErrorSleepAzkar value) errorSleepAzkar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +71,10 @@ mixin _$AzkarState {
     TResult? Function(LoadingAzkar value)? loading,
     TResult? Function(LoadedAzkar value)? loaded,
     TResult? Function(ErrorAzkar value)? error,
+    TResult? Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult? Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult? Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult? Function(ErrorSleepAzkar value)? errorSleepAzkar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +83,10 @@ mixin _$AzkarState {
     TResult Function(LoadingAzkar value)? loading,
     TResult Function(LoadedAzkar value)? loaded,
     TResult Function(ErrorAzkar value)? error,
+    TResult Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult Function(ErrorSleepAzkar value)? errorSleepAzkar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,6 +151,10 @@ class _$_Initial implements _Initial {
     required TResult Function() loading,
     required TResult Function(AzkarModel azkarModel) loaded,
     required TResult Function(Object e) error,
+    required TResult Function() initialSleepAzkar,
+    required TResult Function() loadingSleepAzkar,
+    required TResult Function(AzkarSleepModel azkarModel) loadedSleepAzkar,
+    required TResult Function(Object e) errorSleepAzkar,
   }) {
     return initial();
   }
@@ -138,6 +166,10 @@ class _$_Initial implements _Initial {
     TResult? Function()? loading,
     TResult? Function(AzkarModel azkarModel)? loaded,
     TResult? Function(Object e)? error,
+    TResult? Function()? initialSleepAzkar,
+    TResult? Function()? loadingSleepAzkar,
+    TResult? Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult? Function(Object e)? errorSleepAzkar,
   }) {
     return initial?.call();
   }
@@ -149,6 +181,10 @@ class _$_Initial implements _Initial {
     TResult Function()? loading,
     TResult Function(AzkarModel azkarModel)? loaded,
     TResult Function(Object e)? error,
+    TResult Function()? initialSleepAzkar,
+    TResult Function()? loadingSleepAzkar,
+    TResult Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult Function(Object e)? errorSleepAzkar,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -164,6 +200,10 @@ class _$_Initial implements _Initial {
     required TResult Function(LoadingAzkar value) loading,
     required TResult Function(LoadedAzkar value) loaded,
     required TResult Function(ErrorAzkar value) error,
+    required TResult Function(_InitialSleepAzkar value) initialSleepAzkar,
+    required TResult Function(LoadingSleepAzkar value) loadingSleepAzkar,
+    required TResult Function(LoadedSleepAzkar value) loadedSleepAzkar,
+    required TResult Function(ErrorSleepAzkar value) errorSleepAzkar,
   }) {
     return initial(this);
   }
@@ -175,6 +215,10 @@ class _$_Initial implements _Initial {
     TResult? Function(LoadingAzkar value)? loading,
     TResult? Function(LoadedAzkar value)? loaded,
     TResult? Function(ErrorAzkar value)? error,
+    TResult? Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult? Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult? Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult? Function(ErrorSleepAzkar value)? errorSleepAzkar,
   }) {
     return initial?.call(this);
   }
@@ -186,6 +230,10 @@ class _$_Initial implements _Initial {
     TResult Function(LoadingAzkar value)? loading,
     TResult Function(LoadedAzkar value)? loaded,
     TResult Function(ErrorAzkar value)? error,
+    TResult Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult Function(ErrorSleepAzkar value)? errorSleepAzkar,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -241,6 +289,10 @@ class _$LoadingAzkar implements LoadingAzkar {
     required TResult Function() loading,
     required TResult Function(AzkarModel azkarModel) loaded,
     required TResult Function(Object e) error,
+    required TResult Function() initialSleepAzkar,
+    required TResult Function() loadingSleepAzkar,
+    required TResult Function(AzkarSleepModel azkarModel) loadedSleepAzkar,
+    required TResult Function(Object e) errorSleepAzkar,
   }) {
     return loading();
   }
@@ -252,6 +304,10 @@ class _$LoadingAzkar implements LoadingAzkar {
     TResult? Function()? loading,
     TResult? Function(AzkarModel azkarModel)? loaded,
     TResult? Function(Object e)? error,
+    TResult? Function()? initialSleepAzkar,
+    TResult? Function()? loadingSleepAzkar,
+    TResult? Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult? Function(Object e)? errorSleepAzkar,
   }) {
     return loading?.call();
   }
@@ -263,6 +319,10 @@ class _$LoadingAzkar implements LoadingAzkar {
     TResult Function()? loading,
     TResult Function(AzkarModel azkarModel)? loaded,
     TResult Function(Object e)? error,
+    TResult Function()? initialSleepAzkar,
+    TResult Function()? loadingSleepAzkar,
+    TResult Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult Function(Object e)? errorSleepAzkar,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -278,6 +338,10 @@ class _$LoadingAzkar implements LoadingAzkar {
     required TResult Function(LoadingAzkar value) loading,
     required TResult Function(LoadedAzkar value) loaded,
     required TResult Function(ErrorAzkar value) error,
+    required TResult Function(_InitialSleepAzkar value) initialSleepAzkar,
+    required TResult Function(LoadingSleepAzkar value) loadingSleepAzkar,
+    required TResult Function(LoadedSleepAzkar value) loadedSleepAzkar,
+    required TResult Function(ErrorSleepAzkar value) errorSleepAzkar,
   }) {
     return loading(this);
   }
@@ -289,6 +353,10 @@ class _$LoadingAzkar implements LoadingAzkar {
     TResult? Function(LoadingAzkar value)? loading,
     TResult? Function(LoadedAzkar value)? loaded,
     TResult? Function(ErrorAzkar value)? error,
+    TResult? Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult? Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult? Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult? Function(ErrorSleepAzkar value)? errorSleepAzkar,
   }) {
     return loading?.call(this);
   }
@@ -300,6 +368,10 @@ class _$LoadingAzkar implements LoadingAzkar {
     TResult Function(LoadingAzkar value)? loading,
     TResult Function(LoadedAzkar value)? loaded,
     TResult Function(ErrorAzkar value)? error,
+    TResult Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult Function(ErrorSleepAzkar value)? errorSleepAzkar,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -382,6 +454,10 @@ class _$LoadedAzkar implements LoadedAzkar {
     required TResult Function() loading,
     required TResult Function(AzkarModel azkarModel) loaded,
     required TResult Function(Object e) error,
+    required TResult Function() initialSleepAzkar,
+    required TResult Function() loadingSleepAzkar,
+    required TResult Function(AzkarSleepModel azkarModel) loadedSleepAzkar,
+    required TResult Function(Object e) errorSleepAzkar,
   }) {
     return loaded(azkarModel);
   }
@@ -393,6 +469,10 @@ class _$LoadedAzkar implements LoadedAzkar {
     TResult? Function()? loading,
     TResult? Function(AzkarModel azkarModel)? loaded,
     TResult? Function(Object e)? error,
+    TResult? Function()? initialSleepAzkar,
+    TResult? Function()? loadingSleepAzkar,
+    TResult? Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult? Function(Object e)? errorSleepAzkar,
   }) {
     return loaded?.call(azkarModel);
   }
@@ -404,6 +484,10 @@ class _$LoadedAzkar implements LoadedAzkar {
     TResult Function()? loading,
     TResult Function(AzkarModel azkarModel)? loaded,
     TResult Function(Object e)? error,
+    TResult Function()? initialSleepAzkar,
+    TResult Function()? loadingSleepAzkar,
+    TResult Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult Function(Object e)? errorSleepAzkar,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -419,6 +503,10 @@ class _$LoadedAzkar implements LoadedAzkar {
     required TResult Function(LoadingAzkar value) loading,
     required TResult Function(LoadedAzkar value) loaded,
     required TResult Function(ErrorAzkar value) error,
+    required TResult Function(_InitialSleepAzkar value) initialSleepAzkar,
+    required TResult Function(LoadingSleepAzkar value) loadingSleepAzkar,
+    required TResult Function(LoadedSleepAzkar value) loadedSleepAzkar,
+    required TResult Function(ErrorSleepAzkar value) errorSleepAzkar,
   }) {
     return loaded(this);
   }
@@ -430,6 +518,10 @@ class _$LoadedAzkar implements LoadedAzkar {
     TResult? Function(LoadingAzkar value)? loading,
     TResult? Function(LoadedAzkar value)? loaded,
     TResult? Function(ErrorAzkar value)? error,
+    TResult? Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult? Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult? Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult? Function(ErrorSleepAzkar value)? errorSleepAzkar,
   }) {
     return loaded?.call(this);
   }
@@ -441,6 +533,10 @@ class _$LoadedAzkar implements LoadedAzkar {
     TResult Function(LoadingAzkar value)? loading,
     TResult Function(LoadedAzkar value)? loaded,
     TResult Function(ErrorAzkar value)? error,
+    TResult Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult Function(ErrorSleepAzkar value)? errorSleepAzkar,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -525,6 +621,10 @@ class _$ErrorAzkar implements ErrorAzkar {
     required TResult Function() loading,
     required TResult Function(AzkarModel azkarModel) loaded,
     required TResult Function(Object e) error,
+    required TResult Function() initialSleepAzkar,
+    required TResult Function() loadingSleepAzkar,
+    required TResult Function(AzkarSleepModel azkarModel) loadedSleepAzkar,
+    required TResult Function(Object e) errorSleepAzkar,
   }) {
     return error(e);
   }
@@ -536,6 +636,10 @@ class _$ErrorAzkar implements ErrorAzkar {
     TResult? Function()? loading,
     TResult? Function(AzkarModel azkarModel)? loaded,
     TResult? Function(Object e)? error,
+    TResult? Function()? initialSleepAzkar,
+    TResult? Function()? loadingSleepAzkar,
+    TResult? Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult? Function(Object e)? errorSleepAzkar,
   }) {
     return error?.call(e);
   }
@@ -547,6 +651,10 @@ class _$ErrorAzkar implements ErrorAzkar {
     TResult Function()? loading,
     TResult Function(AzkarModel azkarModel)? loaded,
     TResult Function(Object e)? error,
+    TResult Function()? initialSleepAzkar,
+    TResult Function()? loadingSleepAzkar,
+    TResult Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult Function(Object e)? errorSleepAzkar,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -562,6 +670,10 @@ class _$ErrorAzkar implements ErrorAzkar {
     required TResult Function(LoadingAzkar value) loading,
     required TResult Function(LoadedAzkar value) loaded,
     required TResult Function(ErrorAzkar value) error,
+    required TResult Function(_InitialSleepAzkar value) initialSleepAzkar,
+    required TResult Function(LoadingSleepAzkar value) loadingSleepAzkar,
+    required TResult Function(LoadedSleepAzkar value) loadedSleepAzkar,
+    required TResult Function(ErrorSleepAzkar value) errorSleepAzkar,
   }) {
     return error(this);
   }
@@ -573,6 +685,10 @@ class _$ErrorAzkar implements ErrorAzkar {
     TResult? Function(LoadingAzkar value)? loading,
     TResult? Function(LoadedAzkar value)? loaded,
     TResult? Function(ErrorAzkar value)? error,
+    TResult? Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult? Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult? Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult? Function(ErrorSleepAzkar value)? errorSleepAzkar,
   }) {
     return error?.call(this);
   }
@@ -584,6 +700,10 @@ class _$ErrorAzkar implements ErrorAzkar {
     TResult Function(LoadingAzkar value)? loading,
     TResult Function(LoadedAzkar value)? loaded,
     TResult Function(ErrorAzkar value)? error,
+    TResult Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult Function(ErrorSleepAzkar value)? errorSleepAzkar,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -599,5 +719,619 @@ abstract class ErrorAzkar implements AzkarState {
   Object get e;
   @JsonKey(ignore: true)
   _$$ErrorAzkarCopyWith<_$ErrorAzkar> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_InitialSleepAzkarCopyWith<$Res> {
+  factory _$$_InitialSleepAzkarCopyWith(_$_InitialSleepAzkar value,
+          $Res Function(_$_InitialSleepAzkar) then) =
+      __$$_InitialSleepAzkarCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_InitialSleepAzkarCopyWithImpl<$Res>
+    extends _$AzkarStateCopyWithImpl<$Res, _$_InitialSleepAzkar>
+    implements _$$_InitialSleepAzkarCopyWith<$Res> {
+  __$$_InitialSleepAzkarCopyWithImpl(
+      _$_InitialSleepAzkar _value, $Res Function(_$_InitialSleepAzkar) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_InitialSleepAzkar implements _InitialSleepAzkar {
+  const _$_InitialSleepAzkar();
+
+  @override
+  String toString() {
+    return 'AzkarState.initialSleepAzkar()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_InitialSleepAzkar);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(AzkarModel azkarModel) loaded,
+    required TResult Function(Object e) error,
+    required TResult Function() initialSleepAzkar,
+    required TResult Function() loadingSleepAzkar,
+    required TResult Function(AzkarSleepModel azkarModel) loadedSleepAzkar,
+    required TResult Function(Object e) errorSleepAzkar,
+  }) {
+    return initialSleepAzkar();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(AzkarModel azkarModel)? loaded,
+    TResult? Function(Object e)? error,
+    TResult? Function()? initialSleepAzkar,
+    TResult? Function()? loadingSleepAzkar,
+    TResult? Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult? Function(Object e)? errorSleepAzkar,
+  }) {
+    return initialSleepAzkar?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(AzkarModel azkarModel)? loaded,
+    TResult Function(Object e)? error,
+    TResult Function()? initialSleepAzkar,
+    TResult Function()? loadingSleepAzkar,
+    TResult Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult Function(Object e)? errorSleepAzkar,
+    required TResult orElse(),
+  }) {
+    if (initialSleepAzkar != null) {
+      return initialSleepAzkar();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoadingAzkar value) loading,
+    required TResult Function(LoadedAzkar value) loaded,
+    required TResult Function(ErrorAzkar value) error,
+    required TResult Function(_InitialSleepAzkar value) initialSleepAzkar,
+    required TResult Function(LoadingSleepAzkar value) loadingSleepAzkar,
+    required TResult Function(LoadedSleepAzkar value) loadedSleepAzkar,
+    required TResult Function(ErrorSleepAzkar value) errorSleepAzkar,
+  }) {
+    return initialSleepAzkar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoadingAzkar value)? loading,
+    TResult? Function(LoadedAzkar value)? loaded,
+    TResult? Function(ErrorAzkar value)? error,
+    TResult? Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult? Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult? Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult? Function(ErrorSleepAzkar value)? errorSleepAzkar,
+  }) {
+    return initialSleepAzkar?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoadingAzkar value)? loading,
+    TResult Function(LoadedAzkar value)? loaded,
+    TResult Function(ErrorAzkar value)? error,
+    TResult Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult Function(ErrorSleepAzkar value)? errorSleepAzkar,
+    required TResult orElse(),
+  }) {
+    if (initialSleepAzkar != null) {
+      return initialSleepAzkar(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InitialSleepAzkar implements AzkarState {
+  const factory _InitialSleepAzkar() = _$_InitialSleepAzkar;
+}
+
+/// @nodoc
+abstract class _$$LoadingSleepAzkarCopyWith<$Res> {
+  factory _$$LoadingSleepAzkarCopyWith(
+          _$LoadingSleepAzkar value, $Res Function(_$LoadingSleepAzkar) then) =
+      __$$LoadingSleepAzkarCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingSleepAzkarCopyWithImpl<$Res>
+    extends _$AzkarStateCopyWithImpl<$Res, _$LoadingSleepAzkar>
+    implements _$$LoadingSleepAzkarCopyWith<$Res> {
+  __$$LoadingSleepAzkarCopyWithImpl(
+      _$LoadingSleepAzkar _value, $Res Function(_$LoadingSleepAzkar) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingSleepAzkar implements LoadingSleepAzkar {
+  const _$LoadingSleepAzkar();
+
+  @override
+  String toString() {
+    return 'AzkarState.loadingSleepAzkar()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingSleepAzkar);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(AzkarModel azkarModel) loaded,
+    required TResult Function(Object e) error,
+    required TResult Function() initialSleepAzkar,
+    required TResult Function() loadingSleepAzkar,
+    required TResult Function(AzkarSleepModel azkarModel) loadedSleepAzkar,
+    required TResult Function(Object e) errorSleepAzkar,
+  }) {
+    return loadingSleepAzkar();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(AzkarModel azkarModel)? loaded,
+    TResult? Function(Object e)? error,
+    TResult? Function()? initialSleepAzkar,
+    TResult? Function()? loadingSleepAzkar,
+    TResult? Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult? Function(Object e)? errorSleepAzkar,
+  }) {
+    return loadingSleepAzkar?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(AzkarModel azkarModel)? loaded,
+    TResult Function(Object e)? error,
+    TResult Function()? initialSleepAzkar,
+    TResult Function()? loadingSleepAzkar,
+    TResult Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult Function(Object e)? errorSleepAzkar,
+    required TResult orElse(),
+  }) {
+    if (loadingSleepAzkar != null) {
+      return loadingSleepAzkar();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoadingAzkar value) loading,
+    required TResult Function(LoadedAzkar value) loaded,
+    required TResult Function(ErrorAzkar value) error,
+    required TResult Function(_InitialSleepAzkar value) initialSleepAzkar,
+    required TResult Function(LoadingSleepAzkar value) loadingSleepAzkar,
+    required TResult Function(LoadedSleepAzkar value) loadedSleepAzkar,
+    required TResult Function(ErrorSleepAzkar value) errorSleepAzkar,
+  }) {
+    return loadingSleepAzkar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoadingAzkar value)? loading,
+    TResult? Function(LoadedAzkar value)? loaded,
+    TResult? Function(ErrorAzkar value)? error,
+    TResult? Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult? Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult? Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult? Function(ErrorSleepAzkar value)? errorSleepAzkar,
+  }) {
+    return loadingSleepAzkar?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoadingAzkar value)? loading,
+    TResult Function(LoadedAzkar value)? loaded,
+    TResult Function(ErrorAzkar value)? error,
+    TResult Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult Function(ErrorSleepAzkar value)? errorSleepAzkar,
+    required TResult orElse(),
+  }) {
+    if (loadingSleepAzkar != null) {
+      return loadingSleepAzkar(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingSleepAzkar implements AzkarState {
+  const factory LoadingSleepAzkar() = _$LoadingSleepAzkar;
+}
+
+/// @nodoc
+abstract class _$$LoadedSleepAzkarCopyWith<$Res> {
+  factory _$$LoadedSleepAzkarCopyWith(
+          _$LoadedSleepAzkar value, $Res Function(_$LoadedSleepAzkar) then) =
+      __$$LoadedSleepAzkarCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AzkarSleepModel azkarModel});
+}
+
+/// @nodoc
+class __$$LoadedSleepAzkarCopyWithImpl<$Res>
+    extends _$AzkarStateCopyWithImpl<$Res, _$LoadedSleepAzkar>
+    implements _$$LoadedSleepAzkarCopyWith<$Res> {
+  __$$LoadedSleepAzkarCopyWithImpl(
+      _$LoadedSleepAzkar _value, $Res Function(_$LoadedSleepAzkar) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? azkarModel = null,
+  }) {
+    return _then(_$LoadedSleepAzkar(
+      null == azkarModel
+          ? _value.azkarModel
+          : azkarModel // ignore: cast_nullable_to_non_nullable
+              as AzkarSleepModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoadedSleepAzkar implements LoadedSleepAzkar {
+  const _$LoadedSleepAzkar(this.azkarModel);
+
+  @override
+  final AzkarSleepModel azkarModel;
+
+  @override
+  String toString() {
+    return 'AzkarState.loadedSleepAzkar(azkarModel: $azkarModel)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadedSleepAzkar &&
+            (identical(other.azkarModel, azkarModel) ||
+                other.azkarModel == azkarModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, azkarModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadedSleepAzkarCopyWith<_$LoadedSleepAzkar> get copyWith =>
+      __$$LoadedSleepAzkarCopyWithImpl<_$LoadedSleepAzkar>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(AzkarModel azkarModel) loaded,
+    required TResult Function(Object e) error,
+    required TResult Function() initialSleepAzkar,
+    required TResult Function() loadingSleepAzkar,
+    required TResult Function(AzkarSleepModel azkarModel) loadedSleepAzkar,
+    required TResult Function(Object e) errorSleepAzkar,
+  }) {
+    return loadedSleepAzkar(azkarModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(AzkarModel azkarModel)? loaded,
+    TResult? Function(Object e)? error,
+    TResult? Function()? initialSleepAzkar,
+    TResult? Function()? loadingSleepAzkar,
+    TResult? Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult? Function(Object e)? errorSleepAzkar,
+  }) {
+    return loadedSleepAzkar?.call(azkarModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(AzkarModel azkarModel)? loaded,
+    TResult Function(Object e)? error,
+    TResult Function()? initialSleepAzkar,
+    TResult Function()? loadingSleepAzkar,
+    TResult Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult Function(Object e)? errorSleepAzkar,
+    required TResult orElse(),
+  }) {
+    if (loadedSleepAzkar != null) {
+      return loadedSleepAzkar(azkarModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoadingAzkar value) loading,
+    required TResult Function(LoadedAzkar value) loaded,
+    required TResult Function(ErrorAzkar value) error,
+    required TResult Function(_InitialSleepAzkar value) initialSleepAzkar,
+    required TResult Function(LoadingSleepAzkar value) loadingSleepAzkar,
+    required TResult Function(LoadedSleepAzkar value) loadedSleepAzkar,
+    required TResult Function(ErrorSleepAzkar value) errorSleepAzkar,
+  }) {
+    return loadedSleepAzkar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoadingAzkar value)? loading,
+    TResult? Function(LoadedAzkar value)? loaded,
+    TResult? Function(ErrorAzkar value)? error,
+    TResult? Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult? Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult? Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult? Function(ErrorSleepAzkar value)? errorSleepAzkar,
+  }) {
+    return loadedSleepAzkar?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoadingAzkar value)? loading,
+    TResult Function(LoadedAzkar value)? loaded,
+    TResult Function(ErrorAzkar value)? error,
+    TResult Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult Function(ErrorSleepAzkar value)? errorSleepAzkar,
+    required TResult orElse(),
+  }) {
+    if (loadedSleepAzkar != null) {
+      return loadedSleepAzkar(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadedSleepAzkar implements AzkarState {
+  const factory LoadedSleepAzkar(final AzkarSleepModel azkarModel) =
+      _$LoadedSleepAzkar;
+
+  AzkarSleepModel get azkarModel;
+  @JsonKey(ignore: true)
+  _$$LoadedSleepAzkarCopyWith<_$LoadedSleepAzkar> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ErrorSleepAzkarCopyWith<$Res> {
+  factory _$$ErrorSleepAzkarCopyWith(
+          _$ErrorSleepAzkar value, $Res Function(_$ErrorSleepAzkar) then) =
+      __$$ErrorSleepAzkarCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Object e});
+}
+
+/// @nodoc
+class __$$ErrorSleepAzkarCopyWithImpl<$Res>
+    extends _$AzkarStateCopyWithImpl<$Res, _$ErrorSleepAzkar>
+    implements _$$ErrorSleepAzkarCopyWith<$Res> {
+  __$$ErrorSleepAzkarCopyWithImpl(
+      _$ErrorSleepAzkar _value, $Res Function(_$ErrorSleepAzkar) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? e = null,
+  }) {
+    return _then(_$ErrorSleepAzkar(
+      null == e ? _value.e : e,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ErrorSleepAzkar implements ErrorSleepAzkar {
+  const _$ErrorSleepAzkar(this.e);
+
+  @override
+  final Object e;
+
+  @override
+  String toString() {
+    return 'AzkarState.errorSleepAzkar(e: $e)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorSleepAzkar &&
+            const DeepCollectionEquality().equals(other.e, e));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(e));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorSleepAzkarCopyWith<_$ErrorSleepAzkar> get copyWith =>
+      __$$ErrorSleepAzkarCopyWithImpl<_$ErrorSleepAzkar>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(AzkarModel azkarModel) loaded,
+    required TResult Function(Object e) error,
+    required TResult Function() initialSleepAzkar,
+    required TResult Function() loadingSleepAzkar,
+    required TResult Function(AzkarSleepModel azkarModel) loadedSleepAzkar,
+    required TResult Function(Object e) errorSleepAzkar,
+  }) {
+    return errorSleepAzkar(e);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(AzkarModel azkarModel)? loaded,
+    TResult? Function(Object e)? error,
+    TResult? Function()? initialSleepAzkar,
+    TResult? Function()? loadingSleepAzkar,
+    TResult? Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult? Function(Object e)? errorSleepAzkar,
+  }) {
+    return errorSleepAzkar?.call(e);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(AzkarModel azkarModel)? loaded,
+    TResult Function(Object e)? error,
+    TResult Function()? initialSleepAzkar,
+    TResult Function()? loadingSleepAzkar,
+    TResult Function(AzkarSleepModel azkarModel)? loadedSleepAzkar,
+    TResult Function(Object e)? errorSleepAzkar,
+    required TResult orElse(),
+  }) {
+    if (errorSleepAzkar != null) {
+      return errorSleepAzkar(e);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(LoadingAzkar value) loading,
+    required TResult Function(LoadedAzkar value) loaded,
+    required TResult Function(ErrorAzkar value) error,
+    required TResult Function(_InitialSleepAzkar value) initialSleepAzkar,
+    required TResult Function(LoadingSleepAzkar value) loadingSleepAzkar,
+    required TResult Function(LoadedSleepAzkar value) loadedSleepAzkar,
+    required TResult Function(ErrorSleepAzkar value) errorSleepAzkar,
+  }) {
+    return errorSleepAzkar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(LoadingAzkar value)? loading,
+    TResult? Function(LoadedAzkar value)? loaded,
+    TResult? Function(ErrorAzkar value)? error,
+    TResult? Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult? Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult? Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult? Function(ErrorSleepAzkar value)? errorSleepAzkar,
+  }) {
+    return errorSleepAzkar?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(LoadingAzkar value)? loading,
+    TResult Function(LoadedAzkar value)? loaded,
+    TResult Function(ErrorAzkar value)? error,
+    TResult Function(_InitialSleepAzkar value)? initialSleepAzkar,
+    TResult Function(LoadingSleepAzkar value)? loadingSleepAzkar,
+    TResult Function(LoadedSleepAzkar value)? loadedSleepAzkar,
+    TResult Function(ErrorSleepAzkar value)? errorSleepAzkar,
+    required TResult orElse(),
+  }) {
+    if (errorSleepAzkar != null) {
+      return errorSleepAzkar(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ErrorSleepAzkar implements AzkarState {
+  const factory ErrorSleepAzkar(final Object e) = _$ErrorSleepAzkar;
+
+  Object get e;
+  @JsonKey(ignore: true)
+  _$$ErrorSleepAzkarCopyWith<_$ErrorSleepAzkar> get copyWith =>
       throw _privateConstructorUsedError;
 }

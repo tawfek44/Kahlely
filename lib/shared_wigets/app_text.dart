@@ -37,9 +37,9 @@ class AppText extends StatelessWidget {
         overflow: TextOverflow.ellipsis,
         decoration: decoration,
         decorationColor: Colors.black,
-        fontFamily: 'NeoSansArabic' ,
+        //fontFamily: 'NeoSansArabic' ,
       ),
-      textDirection: TextDirection.rtl ,
+      textDirection: TextDirection.rtl,
       maxLines: maxLines ?? 2,
       locale: const Locale("ar", "AR"),
     );

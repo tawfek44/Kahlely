@@ -11,19 +11,19 @@ import 'package:khalely/styles/colors.dart';
 
 import '../../../data/models/azkar_model/azkar_model.dart';
 
-class AzkarMorningAndNight extends StatefulWidget {
-  const AzkarMorningAndNight({Key? key}) : super(key: key);
+class SleepAzkarScreen extends StatefulWidget {
+  const SleepAzkarScreen({Key? key}) : super(key: key);
 
   @override
-  State<AzkarMorningAndNight> createState() => _AzkarMorningAndNightState();
+  State<SleepAzkarScreen> createState() => _SleepAzkar();
 }
 
-class _AzkarMorningAndNightState extends State<AzkarMorningAndNight> {
+class _SleepAzkar extends State<SleepAzkarScreen> {
   AudioPlayer myAudioPlayer = AudioPlayer();
   @override
   void initState() {
     super.initState();
-    context.read<AzkarCubit>().getAzkar(id: 27);
+    context.read<AzkarCubit>().getSleepAzkar(id: 28);
   }
 
   @override
@@ -35,22 +35,21 @@ class _AzkarMorningAndNightState extends State<AzkarMorningAndNight> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: getAppBar(title: 'أذكار الصباح والمساء', isLeading: true),
+      appBar: getAppBar(title: 'أذكار النوم', isLeading: true),
       body: BlocBuilder<AzkarCubit, AzkarState>(
         builder: (context, state) {
-          if (state is LoadingAzkar) {
+          if (state is LoadingSleepAzkar) {
             return const Center(
               child: AppCircularProgressIndicator(),
             );
-          } else if (state is LoadedAzkar) {
+          } else if (state is LoadedSleepAzkar) {
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
               child: ListView.builder(
-                itemCount: state.azkarModel.morningAndNightAzkar.length,
+                itemCount: state.azkarModel.sleepAzkar.length,
                 itemBuilder: (context, index) {
                   return getAzkarItem(
-                      azkar: state.azkarModel.morningAndNightAzkar,
-                      index: index);
+                      azkar: state.azkarModel.sleepAzkar, index: index);
                 },
               ),
             );

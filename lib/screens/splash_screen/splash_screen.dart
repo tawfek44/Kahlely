@@ -11,7 +11,6 @@ import 'package:khalely/di/injection.dart';
 import 'package:khalely/screens/home_screen/home_screen.dart';
 import 'package:khalely/shared_wigets/app_text.dart';
 import 'package:lottie/lottie.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import '../../bloc/azkar_cubit/azkar_cubit.dart';
 import '../../data/repositories/hadith_teller_repository.dart';
@@ -27,12 +26,11 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 10.w),
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -47,19 +45,20 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 
-  Widget getAppSplashIcon(){
+  Widget getAppSplashIcon() {
     return Lottie.asset('assets/splash_icon.json');
   }
-  Future onTimerFinished() async{
+
+  Future onTimerFinished() async {
     const delay = Duration(seconds: 5);
     await Future.delayed(delay).then((value) {
-      NamedNavigatorImpl().push(Routes.homeScreenRoute,clean: true);
+      NamedNavigatorImpl().push(Routes.homeScreenRoute, clean: true);
     });
   }
+
   @override
   void initState() {
     super.initState();
     onTimerFinished();
-
   }
 }

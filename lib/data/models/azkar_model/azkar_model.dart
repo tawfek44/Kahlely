@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'azkar_model.g.dart';
+
 @JsonSerializable()
 class AzkarModel {
   @JsonKey(name: 'أذكار الصباح والمساء')
@@ -14,19 +15,37 @@ class AzkarModel {
 
   Map<String, dynamic> toJson() => _$AzkarModelToJson(this);
 }
+
+@JsonSerializable()
+class AzkarSleepModel {
+  @JsonKey(name: 'أذكار النوم')
+  List<MorningAndNightAzkar> sleepAzkar;
+
+  AzkarSleepModel({required this.sleepAzkar});
+
+  factory AzkarSleepModel.fromJson(final Map<String, dynamic> json) {
+    return _$AzkarSleepModelFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() => _$AzkarSleepModelToJson(this);
+}
+
 @JsonSerializable()
 class MorningAndNightAzkar {
   @JsonKey(name: 'ID')
   int id;
   @JsonKey(name: 'ARABIC_TEXT')
-  String azkarText ;
+  String azkarText;
   @JsonKey(name: 'REPEAT')
   int repeatCount;
   @JsonKey(name: 'AUDIO')
   Uri azkarAudio;
 
-
-  MorningAndNightAzkar({required this.id,required this.azkarText,required this.repeatCount,required this.azkarAudio});
+  MorningAndNightAzkar(
+      {required this.id,
+      required this.azkarText,
+      required this.repeatCount,
+      required this.azkarAudio});
 
   factory MorningAndNightAzkar.fromJson(final Map<String, dynamic> json) {
     return _$MorningAndNightAzkarFromJson(json);
