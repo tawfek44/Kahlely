@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:khalely/app_routes/app_routes.dart';
+import 'package:khalely/app_routes/app_routes_names.dart';
 import 'package:khalely/bloc/quran_surah_names_cubit/quran_surah_names_cubit.dart';
 import 'package:khalely/constants.dart';
 import 'package:khalely/shared_wigets/app_circular_indicator.dart';
@@ -42,48 +44,24 @@ class _SurahNamesScreenState extends State<SurahNamesScreen> {
               child: ListView.separated(
                 itemBuilder: (context, index) {
                   return InkWell(
-                    onTap: () {},
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 5.h),
-                      child: Row(
-                        children: [
-                          AppText(
-                            text: getVerseEndSymbol(state.quranSurahNamesModel
-                                .quranSurahNamesData[index].number),
-                            fontSize: 20.sp,
-                          ),
-                          SizedBox(
-                            width: 4.w,
-                          ),
-                          AppText(
-                            text: state.quranSurahNamesModel
-                                .quranSurahNamesData[index].surahName,
-                            color: AppColors.primaryColor,
-                            fontSize: 20.sp,
-                          ),
-                          const Spacer(),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              AppText(
-                                text: state
-                                    .quranSurahNamesModel
-                                    .quranSurahNamesData[index]
-                                    .surahEnglishName,
-                                fontSize: 15.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              AppText(
-                                text:
-                                    '${state.quranSurahNamesModel.quranSurahNamesData[index].revelationType} - ${state.quranSurahNamesModel.quranSurahNamesData[index].numberOfAyahs} verses',
-                                color: AppColors.darkGrey,
-                                fontSize: 12.sp,
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
+                    onTap: () {
+                      NamedNavigatorImpl().push(Routes.SurahScreenRoute,
+                          arguments: state.quranSurahNamesModel
+                              .quranSurahNamesData[index].number);
+                    },
+                    child: getSurahNameItem(
+                        surahNumber: state.quranSurahNamesModel
+                            .quranSurahNamesData[index].number,
+                        surahName: quran.getSurahNameArabic(state
+                            .quranSurahNamesModel
+                            .quranSurahNamesData[index]
+                            .number),
+                        surahEnglishName: state.quranSurahNamesModel
+                            .quranSurahNamesData[index].surahEnglishName,
+                        surahNumberOfAyahs: state.quranSurahNamesModel
+                            .quranSurahNamesData[index].numberOfAyahs,
+                        surahRevelationType: state.quranSurahNamesModel
+                            .quranSurahNamesData[index].revelationType),
                   );
                 },
                 separatorBuilder: (context, index) => const Divider(),
@@ -102,4 +80,47 @@ class _SurahNamesScreenState extends State<SurahNamesScreen> {
       ),
     );
   }
+
+  Widget getSurahNameItem({
+    required int surahNumber,
+    required String surahName,
+    required String surahEnglishName,
+    required String surahRevelationType,
+    required int surahNumberOfAyahs,
+  }) =>
+      Padding(
+        padding: EdgeInsets.symmetric(vertical: 5.h),
+        child: Row(
+          children: [
+            AppText(
+              text: getVerseEndSymbol(surahNumber),
+              fontSize: 20.sp,
+            ),
+            SizedBox(
+              width: 4.w,
+            ),
+            AppText(
+              text: surahName,
+              color: AppColors.primaryColor,
+              fontSize: 20.sp,
+            ),
+            const Spacer(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                AppText(
+                  text: surahEnglishName,
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.bold,
+                ),
+                AppText(
+                  text: '$surahRevelationType - $surahNumberOfAyahs verses',
+                  color: AppColors.darkGrey,
+                  fontSize: 12.sp,
+                )
+              ],
+            )
+          ],
+        ),
+      );
 }
