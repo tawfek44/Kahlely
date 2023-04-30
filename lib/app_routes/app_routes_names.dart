@@ -8,6 +8,9 @@ class Routes {
   static const AzkarSleepScreenRoute = "AZKAR_SLEEP_SCREEN_ROUTE";
   static const QuranSurahNamesScreenRoute = "QURAN_SURAH_NAMES_SCREEN_ROUTE";
   static const SurahScreenRoute = "SURAH_SCREEN_ROUTE";
+  static const QuranSurahTranslationNamesScreenRoute =
+      "QURAN_SURAH_TRANSLATION_NAMES_SCREEN_ROUTE";
+  static const SurahTranslationScreenRoute = "SURAH_TRANSLATION_SCREEN_ROUTE";
 }
 
 abstract class NamedNavigator {

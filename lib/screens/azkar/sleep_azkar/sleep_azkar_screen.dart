@@ -27,12 +27,6 @@ class _SleepAzkar extends State<SleepAzkarScreen> {
   }
 
   @override
-  void dispose() {
-    super.dispose();
-    myAudioPlayer.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: getAppBar(title: 'أذكار النوم', isLeading: true),
@@ -88,13 +82,6 @@ class _SleepAzkar extends State<SleepAzkarScreen> {
                     ),
                     getAzkarRepeatCountText(
                         azkarCountText: azkar[index].repeatCount.toString()),
-                    const Spacer(),
-                    getAudioPlayerStopWidget(),
-                    SizedBox(
-                      width: 8.w,
-                    ),
-                    getAudioPlayerPlayWidget(
-                        azkarAudioUrl: azkar[index].azkarAudio.toString()),
                   ],
                 )
               ],
@@ -142,6 +129,7 @@ class _SleepAzkar extends State<SleepAzkarScreen> {
             iconSize: 18.w,
             onPressed: () {
               String url = azkarAudioUrl;
+              print(url);
               myAudioPlayer.stop();
               myAudioPlayer.setAudioSource(AudioSource.uri(Uri.parse(url)));
               myAudioPlayer.play();
@@ -155,4 +143,10 @@ class _SleepAzkar extends State<SleepAzkarScreen> {
           ),
         ),
       );
+
+  @override
+  void dispose() {
+    super.dispose();
+    myAudioPlayer.dispose();
+  }
 }

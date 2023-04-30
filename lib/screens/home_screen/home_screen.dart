@@ -142,6 +142,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     NamedNavigatorImpl().push(Routes.AzkarSleepScreenRoute);
                   }
                   break;
+                case 6:
+                  {
+                    NamedNavigatorImpl()
+                        .push(Routes.QuranSurahTranslationNamesScreenRoute);
+                  }
+                  break;
               }
             },
             child: Container(

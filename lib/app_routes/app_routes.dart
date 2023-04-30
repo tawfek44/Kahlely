@@ -6,10 +6,12 @@ import 'package:khalely/screens/azkar/sleep_azkar/sleep_azkar_screen.dart';
 import 'package:khalely/screens/home_screen/home_screen.dart';
 import 'package:khalely/screens/prayer_timings_screen/prayer_timings_screen.dart';
 import 'package:khalely/screens/surah_names_screen/surah_names_screen.dart';
-import 'package:khalely/screens/surah_screen/surah_screen.dart';
+import 'package:khalely/screens/surah_screens/surah_translation.dart';
 
 import '../screens/qibla_screen/qibla_screen.dart';
 import '../screens/splash_screen/splash_screen.dart';
+import '../screens/surah_screens/surah_screen.dart';
+import '../screens/surah_screens/surah_translation_names.dart';
 import 'app_routes_names.dart';
 
 class NamedNavigatorImpl implements NamedNavigator {
@@ -67,6 +69,22 @@ class NamedNavigatorImpl implements NamedNavigator {
           builder: (_) => Directionality(
               textDirection: TextDirection.rtl,
               child: SurahScreen(
+                surahNumber: settings.arguments,
+              )),
+        );
+
+      case Routes.QuranSurahTranslationNamesScreenRoute:
+        return MaterialPageRoute(
+          builder: (_) => const Directionality(
+              textDirection: TextDirection.rtl,
+              child: SurahTranslationNamesScreen()),
+        );
+
+      case Routes.SurahTranslationScreenRoute:
+        return MaterialPageRoute(
+          builder: (_) => Directionality(
+              textDirection: TextDirection.rtl,
+              child: SurahTranslationScreen(
                 surahNumber: settings.arguments,
               )),
         );

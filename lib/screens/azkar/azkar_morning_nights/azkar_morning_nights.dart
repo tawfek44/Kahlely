@@ -89,13 +89,6 @@ class _AzkarMorningAndNightState extends State<AzkarMorningAndNight> {
                     ),
                     getAzkarRepeatCountText(
                         azkarCountText: azkar[index].repeatCount.toString()),
-                    const Spacer(),
-                    getAudioPlayerStopWidget(),
-                    SizedBox(
-                      width: 8.w,
-                    ),
-                    getAudioPlayerPlayWidget(
-                        azkarAudioUrl: azkar[index].azkarAudio.toString()),
                   ],
                 )
               ],
@@ -134,26 +127,28 @@ class _AzkarMorningAndNightState extends State<AzkarMorningAndNight> {
           ),
         ),
       );
-  Widget getAudioPlayerPlayWidget({required String azkarAudioUrl}) =>
-      CircleAvatar(
-        radius: 18.w,
-        backgroundColor: AppColors.primaryColor,
-        child: Center(
-          child: IconButton(
-            iconSize: 18.w,
-            onPressed: () {
-              String url = azkarAudioUrl;
-              myAudioPlayer.stop();
-              myAudioPlayer.setAudioSource(AudioSource.uri(Uri.parse(url)));
-              myAudioPlayer.play();
-            },
-            icon: const Center(
-              child: Icon(
-                CupertinoIcons.speaker_2,
-                color: Colors.white,
-              ),
+  Widget getAudioPlayerPlayWidget({required String azkarAudioUrl}) {
+    return CircleAvatar(
+      radius: 18.w,
+      backgroundColor: AppColors.primaryColor,
+      child: Center(
+        child: IconButton(
+          iconSize: 18.w,
+          onPressed: () {
+            String url = azkarAudioUrl;
+            print('1111111111111111111111111');
+            myAudioPlayer.stop();
+            myAudioPlayer.setAudioSource(AudioSource.uri(Uri.parse(url)));
+            myAudioPlayer.play();
+          },
+          icon: const Center(
+            child: Icon(
+              CupertinoIcons.speaker_2,
+              color: Colors.white,
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
 }
