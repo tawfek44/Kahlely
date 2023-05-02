@@ -43,33 +43,35 @@ class _SurahTranslationNamesScreenState
           } else if (state is LoadedQuranSurahNames) {
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
-              child: ListView.separated(
-                itemBuilder: (context, index) {
-                  return InkWell(
-                    onTap: () {
-                      NamedNavigatorImpl().push(
-                          Routes.SurahTranslationScreenRoute,
-                          arguments: state.quranSurahNamesModel
-                              .quranSurahNamesData[index].number);
-                    },
-                    child: getSurahNameItem(
-                        surahNumber: state.quranSurahNamesModel
-                            .quranSurahNamesData[index].number,
-                        surahName: quran.getSurahNameArabic(state
-                            .quranSurahNamesModel
-                            .quranSurahNamesData[index]
-                            .number),
-                        surahEnglishName: state.quranSurahNamesModel
-                            .quranSurahNamesData[index].surahEnglishName,
-                        surahNumberOfAyahs: state.quranSurahNamesModel
-                            .quranSurahNamesData[index].numberOfAyahs,
-                        surahRevelationType: state.quranSurahNamesModel
-                            .quranSurahNamesData[index].revelationType),
-                  );
-                },
-                separatorBuilder: (context, index) => const Divider(),
-                itemCount:
-                    state.quranSurahNamesModel.quranSurahNamesData.length,
+              child: Scrollbar(
+                child: ListView.separated(
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: () {
+                        NamedNavigatorImpl().push(
+                            Routes.SurahTranslationScreenRoute,
+                            arguments: state.quranSurahNamesModel
+                                .quranSurahNamesData[index].number);
+                      },
+                      child: getSurahNameItem(
+                          surahNumber: state.quranSurahNamesModel
+                              .quranSurahNamesData[index].number,
+                          surahName: quran.getSurahNameArabic(state
+                              .quranSurahNamesModel
+                              .quranSurahNamesData[index]
+                              .number),
+                          surahEnglishName: state.quranSurahNamesModel
+                              .quranSurahNamesData[index].surahEnglishName,
+                          surahNumberOfAyahs: state.quranSurahNamesModel
+                              .quranSurahNamesData[index].numberOfAyahs,
+                          surahRevelationType: state.quranSurahNamesModel
+                              .quranSurahNamesData[index].revelationType),
+                    );
+                  },
+                  separatorBuilder: (context, index) => const Divider(),
+                  itemCount:
+                      state.quranSurahNamesModel.quranSurahNamesData.length,
+                ),
               ),
             );
           } else {

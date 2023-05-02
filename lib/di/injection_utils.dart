@@ -1,8 +1,8 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:khalely/bloc/azkar_cubit/azkar_cubit.dart';
 import 'package:khalely/bloc/hadith_cubit/hadith_tellers_cubit.dart';
+import 'package:khalely/bloc/hadith_info_cubit/hadith_cubit.dart';
 import 'package:khalely/bloc/prayer_timinigs_cubit/prayer_timinigs_cubit.dart';
 import 'package:khalely/bloc/quran_surah_names_cubit/quran_surah_names_cubit.dart';
 import 'package:khalely/bloc/surah_translation_cubit/surah_translation_cubit.dart';
@@ -16,6 +16,7 @@ MultiBlocProvider provideApp(Widget child) => MultiBlocProvider(
         BlocProvider(create: (_) => getIt<PrayerTimingsCubit>()),
         BlocProvider(create: (_) => getIt<QuranSurahNamesCubit>()),
         BlocProvider(create: (_) => getIt<SurahTranslationCubit>()),
+        BlocProvider(create: (_) => getIt<HadithCubit>()),
       ],
       child: child,
     );

@@ -28,13 +28,15 @@ class _SurahScreenState extends State<SurahScreen> {
           title: quran.getSurahNameArabic(widget.surahNumber), isLeading: true),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15.w),
-        child: ListView.separated(
-          itemBuilder: (context, index) {
-            var verseNumber = index + 1;
-            return getSurahItem(verseNumber: verseNumber);
-          },
-          separatorBuilder: (context, index) => const Divider(),
-          itemCount: quran.getVerseCount(widget.surahNumber),
+        child: Scrollbar(
+          child: ListView.separated(
+            itemBuilder: (context, index) {
+              var verseNumber = index + 1;
+              return getSurahItem(verseNumber: verseNumber);
+            },
+            separatorBuilder: (context, index) => const Divider(),
+            itemCount: quran.getVerseCount(widget.surahNumber),
+          ),
         ),
       ),
     );

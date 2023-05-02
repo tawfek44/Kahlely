@@ -17,16 +17,18 @@ abstract class ApiService extends ChopperService {
   Future<Response> getQuranKareemSurahNames();
 
   @Get(path: '$quranKareemTranslationApi/{id}')
-  Future<Response> getQuranKareemTranslation(
-      @Path('id') int surahID
-      );
+  Future<Response> getQuranKareemTranslation(@Path('id') int surahID);
 
   @Get(path: hadithTellersApi)
   Future<Response> getHadithTellers();
 
-
   @Get(path: '$azkarApi/{id}.json')
-  Future<Response> getAzkar(
-      @Path('id') int id
-      );
+  Future<Response> getAzkar(@Path('id') int id);
+
+  @Get(path: '$hadithTellersApi/{name}?page={page}&limit={limit}')
+  Future<Response> getHadith(
+    @Path('name') String name,
+    @Path('page') int page,
+    @Path('limit') int limit,
+  );
 }

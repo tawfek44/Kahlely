@@ -76,4 +76,20 @@ class _$ApiService extends ApiService {
     );
     return client.send<dynamic, dynamic>($request);
   }
+
+  @override
+  Future<Response<dynamic>> getHadith(
+    String name,
+    int page,
+    int limit,
+  ) {
+    final Uri $url = Uri.parse(
+        'https://hadis-api-id.vercel.app/hadith/${name}?page=${page}&limit=${limit}');
+    final Request $request = Request(
+      'GET',
+      $url,
+      client.baseUrl,
+    );
+    return client.send<dynamic, dynamic>($request);
+  }
 }

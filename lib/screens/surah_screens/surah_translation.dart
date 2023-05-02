@@ -40,14 +40,16 @@ class _SurahTranslationScreenState extends State<SurahTranslationScreen> {
           } else if (state is LoadedSurahTranslation) {
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: 15.w),
-              child: ListView.separated(
-                itemBuilder: (context, index) {
-                  var verseNumber = index + 1;
-                  return getSurahItem(
-                      verseNumber: verseNumber, state: state, index: index);
-                },
-                separatorBuilder: (context, index) => const Divider(),
-                itemCount: quran.getVerseCount(widget.surahNumber),
+              child: Scrollbar(
+                child: ListView.separated(
+                  itemBuilder: (context, index) {
+                    var verseNumber = index + 1;
+                    return getSurahItem(
+                        verseNumber: verseNumber, state: state, index: index);
+                  },
+                  separatorBuilder: (context, index) => const Divider(),
+                  itemCount: quran.getVerseCount(widget.surahNumber),
+                ),
               ),
             );
           } else {

@@ -3,11 +3,13 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:khalely/screens/azkar/azkar_morning_nights/azkar_morning_nights.dart';
 import 'package:khalely/screens/azkar/sleep_azkar/sleep_azkar_screen.dart';
+import 'package:khalely/screens/hadith_info_screen/hadith_screen.dart';
 import 'package:khalely/screens/home_screen/home_screen.dart';
 import 'package:khalely/screens/prayer_timings_screen/prayer_timings_screen.dart';
 import 'package:khalely/screens/surah_names_screen/surah_names_screen.dart';
 import 'package:khalely/screens/surah_screens/surah_translation.dart';
 
+import '../screens/hadith_tellers_names_screen/hadith_tellers_names_screen.dart';
 import '../screens/qibla_screen/qibla_screen.dart';
 import '../screens/splash_screen/splash_screen.dart';
 import '../screens/surah_screens/surah_screen.dart';
@@ -87,6 +89,20 @@ class NamedNavigatorImpl implements NamedNavigator {
               child: SurahTranslationScreen(
                 surahNumber: settings.arguments,
               )),
+        );
+
+      case Routes.HadithTellerNamesScreenRoute:
+        return MaterialPageRoute(
+          builder: (_) => const Directionality(
+              textDirection: TextDirection.rtl,
+              child: HadithTellerNamesScreen()),
+        );
+
+      case Routes.HadithScreenRoute:
+        return MaterialPageRoute(
+          builder: (_) => Directionality(
+              textDirection: TextDirection.rtl,
+              child: HadithScreen(hadithTellerData: settings.arguments)),
         );
     }
 
