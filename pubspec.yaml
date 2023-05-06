@@ -51,6 +51,7 @@ dependencies:
   smooth_compass: ^2.0.17
   just_audio: ^0.9.32
   quran: ^1.2.2
+  draggable_scrollbar: ^0.1.0
   flutter_localizations:
     sdk: flutter
 

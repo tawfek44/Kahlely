@@ -44,45 +44,51 @@ class _HadithScreenState extends State<HadithScreen> {
       body: BlocBuilder<HadithCubit, HadithState>(
         builder: (context, state) {
           if (state is LoadingHadith) {
-            return const Center(child: AppCircularProgressIndicator());
+            return getLoadingWidget();
           } else if (state is LoadedHadith) {
             numberOfPages = state.hadithDataInfo.pagination.totalPages;
             hadithData.addAll(state.hadithDataInfo.hadithInfo);
-            return Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15.w),
-              child: Scrollbar(
-                child: ListView.builder(
-                  controller: scrollController,
-                  itemBuilder: (context, index) => Card(
-                    color: Colors.white,
-                    elevation: 5,
-                    child: Padding(
-                      padding: EdgeInsets.all(8.w),
-                      child: AppText(
-                        text: hadithData[index].hadithText,
-                        maxLines: 1000,
-                        fontSize: 18.sp,
-                      ),
-                    ),
-                  ),
-                  itemCount: hadithData.length,
-                ),
-              ),
-            );
+            return getHadithScreen();
           } else {
-            return Center(
-              child: AppText(
-                text:
-                    'نأسف لحدوث هذا الخطأ يرجى التأكد من جودة الإنترنت والمحاولة مرة أخرى',
-                textAlign: TextAlign.center,
-              ),
-            );
+            return getErrorWidget();
           }
         },
       ),
     );
   }
 
+  Widget getLoadingWidget() =>
+      const Center(child: AppCircularProgressIndicator());
+  Widget getErrorWidget() => Center(
+        child: AppText(
+          text:
+              'نأسف لحدوث هذا الخطأ يرجى التأكد من جودة الإنترنت والمحاولة مرة أخرى',
+          textAlign: TextAlign.center,
+        ),
+      );
+  Widget getHadithScreen() => Padding(
+        padding: EdgeInsets.symmetric(horizontal: 15.w),
+        child: Scrollbar(
+          child: getHadithListView(),
+        ),
+      );
+  Widget getHadithListView() => ListView.builder(
+        controller: scrollController,
+        itemBuilder: (context, index) => Card(
+          color: Colors.white,
+          elevation: 5,
+          child: getHadithItem(index: index),
+        ),
+        itemCount: hadithData.length,
+      );
+  Widget getHadithItem({required int index}) => Padding(
+        padding: EdgeInsets.all(8.w),
+        child: AppText(
+          text: hadithData[index].hadithText,
+          maxLines: 1000,
+          fontSize: 18.sp,
+        ),
+      );
   void loadMore() {
     if (page <= numberOfPages) {
       if (page < numberOfPages) {

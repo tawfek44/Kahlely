@@ -33,31 +33,35 @@ class _SleepAzkar extends State<SleepAzkarScreen> {
       body: BlocBuilder<AzkarCubit, AzkarState>(
         builder: (context, state) {
           if (state is LoadingSleepAzkar) {
-            return const Center(
-              child: AppCircularProgressIndicator(),
-            );
+            return getLoadingWidget();
           } else if (state is LoadedSleepAzkar) {
-            return Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
-              child: ListView.builder(
-                itemCount: state.azkarModel.sleepAzkar.length,
-                itemBuilder: (context, index) {
-                  return getAzkarItem(
-                      azkar: state.azkarModel.sleepAzkar, index: index);
-                },
-              ),
-            );
+            return getAzkarScreen(state: state);
           } else {
-            return Center(
-              child: AppText(
-                text: 'نأسف لا نستطيع خدمتك أخى العزيز  حاول مرة أخرى',
-              ),
-            );
+            return getErrorWidget();
           }
         },
       ),
     );
   }
+
+  Widget getErrorWidget() => Center(
+        child: AppText(
+          text: 'نأسف لا نستطيع خدمتك أخى العزيز  حاول مرة أخرى',
+        ),
+      );
+  Widget getAzkarScreen({required state}) => Padding(
+      padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
+      child: getAzkarListView(state: state));
+
+  Widget getAzkarListView({required state}) => ListView.builder(
+        itemCount: state.azkarModel.sleepAzkar.length,
+        itemBuilder: (context, index) {
+          return getAzkarItem(azkar: state.azkarModel.sleepAzkar, index: index);
+        },
+      );
+  Widget getLoadingWidget() => const Center(
+        child: AppCircularProgressIndicator(),
+      );
 
   Widget getAzkarItem(
       {required List<MorningAndNightAzkar> azkar, required int index}) {
@@ -79,6 +83,7 @@ class _SleepAzkar extends State<SleepAzkarScreen> {
                     AppText(
                       text: 'عدد مرات التكرار: ',
                       color: AppColors.primaryColor,
+                      fontSize: 16.sp,
                     ),
                     getAzkarRepeatCountText(
                         azkarCountText: azkar[index].repeatCount.toString()),
@@ -95,6 +100,7 @@ class _SleepAzkar extends State<SleepAzkarScreen> {
   Widget getAzkarText({required String azkarText}) => AppText(
         text: azkarText,
         maxLines: 100,
+        fontSize: 18.sp,
       );
 
   Widget getAzkarRepeatCountText({required String azkarCountText}) => AppText(

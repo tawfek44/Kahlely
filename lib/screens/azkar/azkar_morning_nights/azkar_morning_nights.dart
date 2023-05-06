@@ -19,17 +19,10 @@ class AzkarMorningAndNight extends StatefulWidget {
 }
 
 class _AzkarMorningAndNightState extends State<AzkarMorningAndNight> {
-  AudioPlayer myAudioPlayer = AudioPlayer();
   @override
   void initState() {
     super.initState();
     context.read<AzkarCubit>().getAzkar(id: 27);
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    myAudioPlayer.dispose();
   }
 
   @override
@@ -39,33 +32,38 @@ class _AzkarMorningAndNightState extends State<AzkarMorningAndNight> {
       body: BlocBuilder<AzkarCubit, AzkarState>(
         builder: (context, state) {
           if (state is LoadingAzkar) {
-            return const Center(
-              child: AppCircularProgressIndicator(),
-            );
+            return getLoadingWidget();
           } else if (state is LoadedAzkar) {
-            return Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
-              child: ListView.builder(
-                itemCount: state.azkarModel.morningAndNightAzkar.length,
-                itemBuilder: (context, index) {
-                  return getAzkarItem(
-                      azkar: state.azkarModel.morningAndNightAzkar,
-                      index: index);
-                },
-              ),
-            );
+            return getAzkarScreen(state: state);
           } else {
-            return Center(
-              child: AppText(
-                text: 'نأسف لا نستطيع خدمتك أخى العزيز  حاول مرة أخرى',
-              ),
-            );
+            return getErrorWidget();
           }
         },
       ),
     );
   }
 
+  Widget getLoadingWidget() => const Center(
+        child: AppCircularProgressIndicator(),
+      );
+
+  Widget getAzkarScreen({required state}) => Padding(
+        padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
+        child: getAzkarListView(state: state),
+      );
+
+  Widget getAzkarListView({required state}) => ListView.builder(
+        itemCount: state.azkarModel.morningAndNightAzkar.length,
+        itemBuilder: (context, index) {
+          return getAzkarItem(
+              azkar: state.azkarModel.morningAndNightAzkar, index: index);
+        },
+      );
+  Widget getErrorWidget() => Center(
+        child: AppText(
+          text: 'نأسف لا نستطيع خدمتك أخى العزيز  حاول مرة أخرى',
+        ),
+      );
   Widget getAzkarItem(
       {required List<MorningAndNightAzkar> azkar, required int index}) {
     return Card(
@@ -86,6 +84,7 @@ class _AzkarMorningAndNightState extends State<AzkarMorningAndNight> {
                     AppText(
                       text: 'عدد مرات التكرار: ',
                       color: AppColors.primaryColor,
+                      fontSize: 16.sp,
                     ),
                     getAzkarRepeatCountText(
                         azkarCountText: azkar[index].repeatCount.toString()),
@@ -102,53 +101,11 @@ class _AzkarMorningAndNightState extends State<AzkarMorningAndNight> {
   Widget getAzkarText({required String azkarText}) => AppText(
         text: azkarText,
         maxLines: 100,
+        fontSize: 18.sp,
       );
 
   Widget getAzkarRepeatCountText({required String azkarCountText}) => AppText(
         text: azkarCountText,
         color: AppColors.primaryColor,
       );
-
-  Widget getAudioPlayerStopWidget() => CircleAvatar(
-        radius: 18.w,
-        backgroundColor: AppColors.errorColor,
-        child: Center(
-          child: IconButton(
-            iconSize: 18.w,
-            onPressed: () {
-              myAudioPlayer.stop();
-            },
-            icon: const Center(
-              child: Icon(
-                CupertinoIcons.speaker_slash,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ),
-      );
-  Widget getAudioPlayerPlayWidget({required String azkarAudioUrl}) {
-    return CircleAvatar(
-      radius: 18.w,
-      backgroundColor: AppColors.primaryColor,
-      child: Center(
-        child: IconButton(
-          iconSize: 18.w,
-          onPressed: () {
-            String url = azkarAudioUrl;
-            print('1111111111111111111111111');
-            myAudioPlayer.stop();
-            myAudioPlayer.setAudioSource(AudioSource.uri(Uri.parse(url)));
-            myAudioPlayer.play();
-          },
-          icon: const Center(
-            child: Icon(
-              CupertinoIcons.speaker_2,
-              color: Colors.white,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
 }
