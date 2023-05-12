@@ -1,5 +1,6 @@
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:khalely/app_routes/app_routes.dart';
@@ -12,6 +13,7 @@ import 'package:khalely/styles/colors.dart';
 import 'package:quran/quran.dart' as quran;
 import 'package:quran/quran.dart';
 
+import '../../data/models/quran_surah_names_model/quran_surah_names_model.dart';
 import '../../shared_wigets/app_scroll_bar.dart';
 
 class SurahNamesScreen extends StatefulWidget {
@@ -41,36 +43,43 @@ class _SurahNamesScreenState extends State<SurahNamesScreen> {
               child: AppCircularProgressIndicator(),
             );
           } else if (state is LoadedQuranSurahNames) {
-            return AppScrollBar(
-              builder: (controller) => ListView.separated(
-                padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
-                controller: controller,
-                itemBuilder: (context, index) {
-                  return InkWell(
-                    onTap: () {
-                      NamedNavigatorImpl().push(Routes.SurahScreenRoute,
-                          arguments: state.quranSurahNamesModel
-                              .quranSurahNamesData[index].number);
-                    },
-                    child: getSurahNameItem(
-                        surahNumber: state.quranSurahNamesModel
-                            .quranSurahNamesData[index].number,
-                        surahName: quran.getSurahNameArabic(state
-                            .quranSurahNamesModel
-                            .quranSurahNamesData[index]
-                            .number),
-                        surahEnglishName: state.quranSurahNamesModel
-                            .quranSurahNamesData[index].surahEnglishName,
-                        surahNumberOfAyahs: state.quranSurahNamesModel
-                            .quranSurahNamesData[index].numberOfAyahs,
-                        surahRevelationType: state.quranSurahNamesModel
-                            .quranSurahNamesData[index].revelationType),
-                  );
-                },
-                separatorBuilder: (context, index) => const Divider(),
-                itemCount:
-                    state.quranSurahNamesModel.quranSurahNamesData.length,
-              ),
+            return Column(
+              children: [
+                Expanded(
+                  child: AppScrollBar(
+                    builder: (controller) => ListView.separated(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 15.w, vertical: 10.h),
+                      controller: controller,
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            NamedNavigatorImpl().push(Routes.SurahScreenRoute,
+                                arguments: state.quranSurahNamesModel
+                                    .quranSurahNamesData[index].number);
+                          },
+                          child: getSurahNameItem(
+                              surahNumber: state.quranSurahNamesModel
+                                  .quranSurahNamesData[index].number,
+                              surahName: quran.getSurahNameArabic(state
+                                  .quranSurahNamesModel
+                                  .quranSurahNamesData[index]
+                                  .number),
+                              surahEnglishName: state.quranSurahNamesModel
+                                  .quranSurahNamesData[index].surahEnglishName,
+                              surahNumberOfAyahs: state.quranSurahNamesModel
+                                  .quranSurahNamesData[index].numberOfAyahs,
+                              surahRevelationType: state.quranSurahNamesModel
+                                  .quranSurahNamesData[index].revelationType),
+                        );
+                      },
+                      separatorBuilder: (context, index) => const Divider(),
+                      itemCount:
+                          state.quranSurahNamesModel.quranSurahNamesData.length,
+                    ),
+                  ),
+                ),
+              ],
             );
           } else {
             return Center(

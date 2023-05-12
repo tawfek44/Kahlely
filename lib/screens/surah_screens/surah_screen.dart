@@ -32,7 +32,7 @@ class _SurahScreenState extends State<SurahScreen> {
           child: ListView.separated(
             itemBuilder: (context, index) {
               var verseNumber = index + 1;
-              return getSurahItem(verseNumber: verseNumber);
+              return getSurahItem(verseNumber: verseNumber, idx: index);
             },
             separatorBuilder: (context, index) => const Divider(),
             itemCount: quran.getVerseCount(widget.surahNumber),
@@ -42,7 +42,9 @@ class _SurahScreenState extends State<SurahScreen> {
     );
   }
 
-  Widget getSurahItem({required int verseNumber}) => Column(
+  int index = -1;
+  int pressCount = 0;
+  Widget getSurahItem({required int verseNumber, required idx}) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           getAyah(ayahNumber: verseNumber),
@@ -53,10 +55,10 @@ class _SurahScreenState extends State<SurahScreen> {
           SizedBox(
             height: 5.h,
           ),
-          getAudioIcon(ayahNumber: verseNumber),
+          getAudioIcon(ayahNumber: verseNumber, idx: idx),
         ],
       );
-  Widget getAudioIcon({required int ayahNumber}) => Row(
+  Widget getAudioIcon({required int ayahNumber, required int idx}) => Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           CircleAvatar(
@@ -64,13 +66,28 @@ class _SurahScreenState extends State<SurahScreen> {
             backgroundColor: AppColors.primaryColor,
             child: IconButton(
               onPressed: () {
-                playAudio(ayahNumber: ayahNumber);
+                setState(() {
+                  pressCount++;
+                  if (pressCount % 2 != 0) {
+                    index = idx;
+                    playAudio(ayahNumber: ayahNumber);
+                  } else {
+                    index = -1;
+                    myAudioPlayer.stop();
+                  }
+                });
               },
-              icon: Icon(
-                CupertinoIcons.play_arrow_solid,
-                color: Colors.white,
-                size: 15.w,
-              ),
+              icon: index == idx
+                  ? Icon(
+                      CupertinoIcons.pause,
+                      color: Colors.white,
+                      size: 17.w,
+                    )
+                  : Icon(
+                      CupertinoIcons.play_arrow_solid,
+                      color: Colors.white,
+                      size: 15.w,
+                    ),
             ),
           )
         ],
@@ -81,6 +98,14 @@ class _SurahScreenState extends State<SurahScreen> {
 
     myAudioPlayer.setAudioSource(AudioSource.uri(Uri.parse(url)));
     myAudioPlayer.play();
+    myAudioPlayer.playerStateStream.listen((state) {
+      if (state.processingState == ProcessingState.completed) {
+        setState(() {
+          index = -1;
+          pressCount++;
+        });
+      }
+    });
   }
 
   Widget getAyahEnglishTranslation({required int ayahNumber}) => AppText(

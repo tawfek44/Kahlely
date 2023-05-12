@@ -79,7 +79,7 @@ class _SurahTranslationScreenState extends State<SurahTranslationScreen> {
           SizedBox(
             height: 5.h,
           ),
-          getAudioIcon(ayahNumber: verseNumber)
+          getAudioIcon(ayahNumber: verseNumber, index: index)
         ],
       );
   Widget getAyahTranslation({required ayahTranslation}) => AppText(
@@ -88,7 +88,9 @@ class _SurahTranslationScreenState extends State<SurahTranslationScreen> {
         color: AppColors.primaryColor,
         fontSize: 17.sp,
       );
-  Widget getAudioIcon({required int ayahNumber}) => Row(
+  int idx = -1;
+  int pressCount = 0;
+  Widget getAudioIcon({required int ayahNumber, required int index}) => Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           CircleAvatar(
@@ -96,13 +98,28 @@ class _SurahTranslationScreenState extends State<SurahTranslationScreen> {
             backgroundColor: AppColors.primaryColor,
             child: IconButton(
               onPressed: () {
-                playAudio(ayahNumber: ayahNumber);
+                setState(() {
+                  pressCount++;
+                  if (pressCount % 2 != 0) {
+                    idx = index;
+                    playAudio(ayahNumber: ayahNumber);
+                  } else {
+                    idx = -1;
+                    myAudioPlayer.stop();
+                  }
+                });
               },
-              icon: Icon(
-                CupertinoIcons.play_arrow_solid,
-                color: Colors.white,
-                size: 15.w,
-              ),
+              icon: index == idx
+                  ? Icon(
+                      CupertinoIcons.pause,
+                      color: Colors.white,
+                      size: 17.w,
+                    )
+                  : Icon(
+                      CupertinoIcons.play_arrow_solid,
+                      color: Colors.white,
+                      size: 15.w,
+                    ),
             ),
           )
         ],
@@ -112,6 +129,14 @@ class _SurahTranslationScreenState extends State<SurahTranslationScreen> {
     myAudioPlayer.stop();
     myAudioPlayer.setAudioSource(AudioSource.uri(Uri.parse(url)));
     myAudioPlayer.play();
+    myAudioPlayer.playerStateStream.listen((state) {
+      if (state.processingState == ProcessingState.completed) {
+        setState(() {
+          idx = -1;
+          pressCount++;
+        });
+      }
+    });
   }
 
   Widget getAyah({required int ayahNumber}) => AppText(
