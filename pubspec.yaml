@@ -52,6 +52,7 @@ dependencies:
   just_audio: ^0.9.32
   quran: ^1.2.2
   draggable_scrollbar: ^0.1.0
+  change_app_package_name: ^1.0.0
   flutter_localizations:
     sdk: flutter
 
@@ -81,16 +82,18 @@ flutter:
   assets:
     - assets/
 
-  fonts:
-    - family: NeoSansArabic
-      fonts:
-        - asset: assets/fonts/neo_sans_arabic/Neo Sans Arabic Regular.ttf
-        - asset: assets/fonts/neo_sans_arabic/Neo_Sans_Medium.ttf
-        - asset: assets/fonts/neo_sans_arabic/NeoSansArabic.ttf
-        - asset: assets/fonts/neo_sans_arabic/NeoSansArabicBlack.ttf
-        - asset: assets/fonts/neo_sans_arabic/NeoSansArabicBold.ttf
-        - asset: assets/fonts/neo_sans_arabic/NeoSansArabicLight.ttf
-        - asset: assets/fonts/neo_sans_arabic/NeoSansArabicMedium.ttf
-        - asset: assets/fonts/neo_sans_arabic/NeoSansArabicUltra.ttf
+
+    ###fonts:
+      ###  - family: NeoSansArabic
+      ###    fonts:
+      ###     - asset: assets/fonts/neo_sans_arabic/Neo Sans Arabic Regular.ttf
+      ###    - asset: assets/fonts/neo_sans_arabic/Neo_Sans_Medium.ttf
+      ###    - asset: assets/fonts/neo_sans_arabic/NeoSansArabic.ttf
+      ###    - asset: assets/fonts/neo_sans_arabic/NeoSansArabicBlack.ttf
+      ###     - asset: assets/fonts/neo_sans_arabic/NeoSansArabicBold.ttf
+      ###     - asset: assets/fonts/neo_sans_arabic/NeoSansArabicLight.ttf
+      ###    - asset: assets/fonts/neo_sans_arabic/NeoSansArabicMedium.ttf
+          ###      - asset: assets/fonts/neo_sans_arabic/NeoSansArabicUltra.ttf
+          ###
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

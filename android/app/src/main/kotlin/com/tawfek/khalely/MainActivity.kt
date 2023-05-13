@@ -1,4 +1,4 @@
-package com.example.khalely
+package com.tawfek.khalely
 
 import io.flutter.embedding.android.FlutterActivity
 
