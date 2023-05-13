@@ -59,11 +59,6 @@ class _AzkarMorningAndNightState extends State<AzkarMorningAndNight> {
               azkar: state.azkarModel.morningAndNightAzkar, index: index);
         },
       );
-  Widget getErrorWidget() => Center(
-        child: AppText(
-          text: 'نأسف لا نستطيع خدمتك أخى العزيز  حاول مرة أخرى',
-        ),
-      );
   Widget getAzkarItem(
       {required List<MorningAndNightAzkar> azkar, required int index}) {
     return Card(

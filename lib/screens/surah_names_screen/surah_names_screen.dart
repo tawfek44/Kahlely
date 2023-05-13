@@ -82,11 +82,7 @@ class _SurahNamesScreenState extends State<SurahNamesScreen> {
               ],
             );
           } else {
-            return Center(
-              child: AppText(
-                  text:
-                      'نأسف لحدوث هذا الخطأ يرجى التأكد من جودة الإنترنت والمحاولة مرة أخرى'),
-            );
+            return getErrorWidget();
           }
         },
       ),

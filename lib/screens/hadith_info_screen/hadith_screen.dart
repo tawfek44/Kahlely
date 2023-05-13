@@ -59,13 +59,7 @@ class _HadithScreenState extends State<HadithScreen> {
 
   Widget getLoadingWidget() =>
       const Center(child: AppCircularProgressIndicator());
-  Widget getErrorWidget() => Center(
-        child: AppText(
-          text:
-              'نأسف لحدوث هذا الخطأ يرجى التأكد من جودة الإنترنت والمحاولة مرة أخرى',
-          textAlign: TextAlign.center,
-        ),
-      );
+
   Widget getHadithScreen() => Padding(
         padding: EdgeInsets.symmetric(horizontal: 15.w),
         child: Scrollbar(

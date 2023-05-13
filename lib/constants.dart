@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:khalely/shared_wigets/app_bar_widget.dart';
 
 const appName = 'خليلى';
@@ -49,5 +50,12 @@ PreferredSize getAppBar({required String title, required bool isLeading}) =>
       child: AppBarWidget(
         title: title,
         isLeading: isLeading,
+      ),
+    );
+
+Widget getErrorWidget() => Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      child: Center(
+        child: SizedBox(width: 80.w, child: Image.asset('assets/no_wifi.png')),
       ),
     );

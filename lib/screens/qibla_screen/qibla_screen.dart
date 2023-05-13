@@ -40,60 +40,15 @@ class _QiblaScreenState extends State<QiblaScreen> {
               );
             }
             if (snapshot.hasError) {
-              return Center(
-                child: AppText(text: "Error: ${snapshot.error.toString()}"),
+              return Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Center(
+                  child: AppText(text: "خطا: ${snapshot.error.toString()}"),
+                ),
               );
             }
             return QiblahCompass();
           },
-          /*child: Container(
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    AppColors.primaryColor,
-                    AppColors.primaryColor,
-                    AppColors.secondlyColor
-                  ],
-                ),
-              ),
-              child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15.w),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Row(
-                        children: [
-                          AppText(
-                            text: 'الزاوية: ',
-                            fontSize: 16.sp,
-                          ),
-                          AppText(
-                            text: heading!.ceil().toString(),
-                            fontSize: 16.sp,
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20.h,
-                      ),
-                      Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Transform.rotate(
-                            angle: ((heading ?? 0) * (pi / 180) * -1),
-                            child: Image.asset(
-                              'assets/compass.png',
-                              scale: 1.1,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ))),*/
         ),
       ),
     );

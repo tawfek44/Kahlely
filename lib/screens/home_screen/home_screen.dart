@@ -9,7 +9,6 @@ import 'package:khalely/styles/colors.dart';
 
 import '../../app_routes/app_routes_names.dart';
 import '../../constants.dart';
-import '../../shared_wigets/app_bar_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -36,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
               AppText(
                 text: 'الأقسام',
                 fontWeight: FontWeight.bold,
+                color: AppColors.primaryColor,
                 fontSize: 20.sp,
               ),
               SizedBox(
@@ -70,29 +70,23 @@ class _HomeScreenState extends State<HomeScreen> {
       );
 
   Widget getDateInfo() => Padding(
-        padding: EdgeInsets.only(right: 10.w, top: 45.h),
+        padding: EdgeInsets.only(right: 10.w, top: 36.h),
         child: Column(
           children: [
             AppText(
               text: getTimeInArabic(),
               color: Colors.white,
-              fontSize: 25.sp,
-            ),
-            SizedBox(
-              height: 10.h,
+              fontSize: 40.sp,
             ),
             AppText(
               text: getGeorgianTimeInArabic(),
               color: Colors.white,
               fontSize: 20.sp,
             ),
-            SizedBox(
-              height: 5.h,
-            ),
             AppText(
               text: getHijriTimeInArabic(),
               color: Colors.white,
-              fontSize: 15.sp,
+              fontSize: 16.sp,
             ),
           ],
         ),

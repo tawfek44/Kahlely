@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
           ],
           debugShowCheckedModeBanner: false,
           theme: themeData,
-          initialRoute: Routes.homeScreenRoute,
+          initialRoute: Routes.splashScreenRoute,
           onGenerateRoute: NamedNavigatorImpl.onGenerateRoute,
           navigatorKey: NamedNavigatorImpl.navigatorState,
         );

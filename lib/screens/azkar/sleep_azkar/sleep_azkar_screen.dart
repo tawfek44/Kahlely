@@ -44,11 +44,6 @@ class _SleepAzkar extends State<SleepAzkarScreen> {
     );
   }
 
-  Widget getErrorWidget() => Center(
-        child: AppText(
-          text: 'نأسف لا نستطيع خدمتك أخى العزيز  حاول مرة أخرى',
-        ),
-      );
   Widget getAzkarScreen({required state}) => Padding(
       padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
       child: getAzkarListView(state: state));

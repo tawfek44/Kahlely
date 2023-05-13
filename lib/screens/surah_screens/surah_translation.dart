@@ -53,11 +53,7 @@ class _SurahTranslationScreenState extends State<SurahTranslationScreen> {
               ),
             );
           } else {
-            return Center(
-              child: AppText(
-                  text:
-                      'نأسف لحدوث هذا الخطأ يرجى التأكد من جودة الإنترنت والمحاولة مرة أخرى'),
-            );
+            return getErrorWidget();
           }
         },
       ),

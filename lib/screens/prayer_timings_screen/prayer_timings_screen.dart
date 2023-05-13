@@ -82,9 +82,6 @@ class _PrayerTimingsScreenState extends State<PrayerTimingsScreen> {
         );
   }
 
-  Widget getErrorWidget() => Center(
-        child: SizedBox(width: 80.w, child: Image.asset('assets/no_wifi.png')),
-      );
   Widget getPrayerTimingsIcons({required String icon}) => SizedBox(
         width: 40.w,
         child: Image.asset('assets/$icon'),

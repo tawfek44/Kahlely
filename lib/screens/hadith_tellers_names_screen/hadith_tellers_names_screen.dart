@@ -72,13 +72,7 @@ class _HadithTellerNamesScreenState extends State<HadithTellerNamesScreen> {
                 ),
               );
             } else {
-              return Center(
-                child: AppText(
-                  text:
-                      'نأسف لحدوث هذا الخطأ يرجى التأكد من جودة الإنترنت والمحاولة مرة أخرى',
-                  textAlign: TextAlign.center,
-                ),
-              );
+              return getErrorWidget();
             }
           },
         ));
